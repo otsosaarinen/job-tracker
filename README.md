@@ -1,4 +1,4 @@
-# Application Tracker
+# Job Tracker
 A web application to help job seekers organize, track, and manage their job applications. Stay on top of your job search with status tracking, notes, deadlines, and reminders.
 
 ## Built using
