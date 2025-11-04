@@ -3,10 +3,14 @@
 import { Button } from "@/components/ui/button";
 
 export default function Home() {
+	// environment check
+	const API_URL =
+		process.env.ENVIRONMENT == "PRODUCTION"
+			? process.env.NEXT_PUBLIC_PRODUCTION_BACKEND_URL
+			: process.env.NEXT_PUBLIC_DEVELOPMENT_BACKEND_URL;
+
 	const ApiTest = async () => {
-		const response = await fetch(
-			"https://jobtracker-d7g0hnegfqhrg3fc.westeurope-01.azurewebsites.net/weatherforecast",
-		);
+		const response = await fetch(`${API_URL}/weatherforecast`);
 		const data = await response.json();
 		console.log(data);
 	};
