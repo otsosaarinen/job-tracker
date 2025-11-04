@@ -2,8 +2,11 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
+import { Button } from "@/components/ui/button";
+
 import { ThemeProvider } from "@/components/theme-provider";
 import { ModeToggle } from "@/components/mode-toggle";
+import { Github } from "lucide-react";
 
 const geistSans = Geist({
 	variable: "--font-geist-sans",
@@ -37,7 +40,15 @@ export default function RootLayout({
 					disableTransitionOnChange
 				>
 					{children}
-					<div className="absolute top-3 right-3">
+					<div className="absolute top-3 right-3 flex flex-row gap-3">
+						<Button variant="outline" size="icon">
+							<a
+								href="https://github.com/otsosaarinen/job-tracker"
+								target="_blank"
+							>
+								<Github />
+							</a>
+						</Button>
 						<ModeToggle />
 					</div>
 				</ThemeProvider>
