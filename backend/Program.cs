@@ -23,8 +23,9 @@ namespace backend
 				options.AddPolicy(name: MyAllowSpecificOrigins, policy =>
 				{
 					policy.WithOrigins(allowedOrigins)
-						  .WithHeaders("Content-Type", "Authorization")
-						  .WithMethods("GET", "POST", "PUT", "DELETE");
+						  .AllowAnyHeader()
+						  .AllowAnyMethod()
+						  .AllowCredentials();
 				});
 			});
 
