@@ -1,6 +1,6 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export default function Home() {
 	// environment check
@@ -20,29 +20,12 @@ export default function Home() {
 			<h1 className="text-7xl font-bold">
 				<span className="text-orange-500">Job</span> Tracker
 			</h1>
-			<h2 className="text-lg font-medium">
-				<span className="underline decoration-orange-500">Manage</span>
-				{", "}
-				<span className="underline decoration-orange-500">
-					organize
-				</span>{" "}
-				and{" "}
-				<span className="underline decoration-orange-500">track</span>{" "}
-				your job applications with{" "}
-				<span className="underline decoration-orange-500">
-					job tracker
-				</span>
+			<h2 className="text-xl font-medium max-w-125">
+				Manage, organize and track your job applications with job tracker
 			</h2>
-			<h3 className="mt-10 text-lg font-medium">
-				Click{" "}
-				<span className="text-orange-500 underline">
-					<a href="/signup">here</a>
-				</span>{" "}
-				to sign up
-			</h3>
-			<div className="absolute top-3 left-3 flex flex-row gap-3 font-medium">
-				<a href="/login">Login</a>
-				<a href="/signup">Signup</a>
+			<div className="flex flex-row gap-3 text-xl font-medium mt-10">
+				<Link className="rounded-sm duration-200 transition-color hover:bg-neutral-900 hover:text-orange-500 w-25 bg-orange-500 px-3 py-1" href="/login">Login</Link>
+				<Link className="rounded-sm duration-200 transition-color hover:bg-neutral-900 hover:text-orange-500 w-25 bg-orange-500 px-3 py-1" href="/signup">Signup</Link>
 			</div>
 		</div>
 	);
